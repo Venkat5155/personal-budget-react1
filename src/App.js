@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+
+import {
+  Route,
+  BrowserRouter as Router,
+  Routes
+} from "react-router-dom";
+
+import AboutPage from './AboutPage/AboutPage';
+import Footer from './Footer/Footer';
+import Hero from './Hero/Hero';
+import HomePage from './HomePage/HomePage';
+import LoginPage from './LoginPage/LoginPage';
+import Menu from './Menu/Menu';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <Menu />
+    <Hero />
+    <div className="mainContainer">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+      <center>
+      {/* <PieChart dataSource={dataSource} />
+      <PieChartD3 dataSource={dataSourceNew}/> */}
+      </center>
     </div>
+
+    <Footer />
+  </Router>
   );
 }
 
