@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 
 import {
   Route,
@@ -27,10 +27,6 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
-      <center>
-      {/* <PieChart dataSource={dataSource} />
-      <PieChartD3 dataSource={dataSourceNew}/> */}
-      </center>
     </div>
 
     <Footer />
